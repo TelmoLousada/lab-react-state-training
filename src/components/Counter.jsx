@@ -1,22 +1,20 @@
-import React, { useState } from 'react';
-import './App.css';
+import { useState } from "react";
+import "../App.css";
 
-export default function Counter() {
-  const [counter, setCounter] = useState(0);
-
-  const increaseCounter = () => {
-    setCounter(counter + 1);
-  }
-
-  const decreaseCounter = () => {
-    setCounter(counter - 1);
-  }
+const Counter = () => {
+  const [count, setCount] = useState(0);
 
   return (
-    <div>
-      <h1>Counter: {counter}</h1>
-      <button onClick={increaseCounter}>Increase</button>
-      <button onClick={decreaseCounter}>Decrease</button>
+    <div className="counter">
+      <button onClick={() => setCount(count - 1)} className="counter-button">
+        -
+      </button>
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 1)} className="counter-button">
+        +
+      </button>
     </div>
   );
-}
+};
+
+export default Counter;
